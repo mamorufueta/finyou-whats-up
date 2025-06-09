@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +12,7 @@
     --finyou-ice: #F8FFFE;
     --finyou-dark: #1A1A1A;
 
-    --background: 248 255 254; /* Finyou Ice */
+    --background: 255 255 255; /* Changed to white */
     --foreground: 26 26 26; /* Finyou Dark */
 
     --card: 255 255 255;
