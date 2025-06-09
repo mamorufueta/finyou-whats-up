@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   DollarSign, 
@@ -6,7 +5,8 @@ import {
   TrendingDown, 
   Wallet,
   ArrowUpRight,
-  ArrowDownRight 
+  ArrowDownRight,
+  FileText
 } from 'lucide-react';
 import FinancialCard from './FinancialCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -85,7 +85,6 @@ const Dashboard = () => {
             icon={item.icon}
             trend={item.trend}
             className="animate-fade-in"
-            style={{ animationDelay: `${index * 100}ms` } as React.CSSProperties}
           />
         ))}
       </div>
