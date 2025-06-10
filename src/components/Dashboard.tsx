@@ -93,20 +93,20 @@ const Dashboard = () => {
     percentage: 12,
     color: "bg-purple-500"
   }];
-  return <div className="space-y-6">
+  return <div className="space-y-6 rounded-none">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold font-sora gradient-text">
             Dashboard Financeiro
           </h1>
-          <p className="text-muted-foreground mt-1">
+          <p className="mt-1 text-zinc-950">
             Visão geral das suas finanças em tempo real
           </p>
         </div>
         <div className="flex items-center gap-3">
           <div className="text-right">
-            <p className="text-sm text-muted-foreground">Última atualização</p>
+            <p className="text-sm text-zinc-950">Última atualização</p>
             <p className="text-sm font-medium">Agora mesmo</p>
           </div>
           <div className="w-3 h-3 bg-finyou-neon rounded-full animate-pulse"></div>
@@ -130,14 +130,14 @@ const Dashboard = () => {
               {recentTransactions.map(transaction => {
               const Icon = transaction.icon;
               const isPositive = transaction.value > 0;
-              return <div key={transaction.id} className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors">
+              return <div key={transaction.id} className="flex items-center justify-between p-3 rounded-lg transition-colors bg-zinc-50">
                     <div className="flex items-center gap-3">
                       <div className={`p-2 rounded-lg ${isPositive ? 'bg-finyou-neon/10' : 'bg-red-50'}`}>
                         <Icon className={`h-4 w-4 ${isPositive ? 'text-finyou-neon' : 'text-red-500'}`} />
                       </div>
                       <div>
                         <p className="font-medium text-sm">{transaction.description}</p>
-                        <p className="text-xs text-muted-foreground">{transaction.category} • {transaction.date}</p>
+                        <p className="text-xs text-gray-950">{transaction.category} • {transaction.date}</p>
                       </div>
                     </div>
                     <div className="text-right">
@@ -159,11 +159,11 @@ const Dashboard = () => {
           <CardContent>
             <div className="space-y-4">
               {topCategories.map((category, index) => <div key={index} className="space-y-2">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between bg-slate-50">
                     <span className="text-sm font-medium">{category.name}</span>
-                    <span className="text-sm text-muted-foreground">R$ {category.value.toFixed(2)}</span>
+                    <span className="text-sm text-slate-950">R$ {category.value.toFixed(2)}</span>
                   </div>
-                  <div className="w-full bg-muted rounded-full h-2">
+                  <div className="w-full rounded-full h-2 bg-amber-200">
                     <div className={`h-2 rounded-full ${category.color} transition-all duration-500`} style={{
                   width: `${category.percentage}%`,
                   animationDelay: `${index * 150}ms`
@@ -186,7 +186,7 @@ const Dashboard = () => {
               <DollarSign className="h-6 w-6 mx-auto mb-2 text-finyou-teal group-hover:scale-110 transition-transform" />
               <p className="text-sm font-medium">Nova Receita</p>
             </button>
-            <button className="p-4 text-center rounded-lg border border-border hover:border-red-400 hover:bg-red-50 transition-all duration-200 group">
+            <button className="p-4 text-center rounded-lg border border-border hover:border-red-400 hover:bg-red-50 transition-all duration-200 group text-slate-950">
               <TrendingDown className="h-6 w-6 mx-auto mb-2 text-red-500 group-hover:scale-110 transition-transform" />
               <p className="text-sm font-medium">Nova Despesa</p>
             </button>

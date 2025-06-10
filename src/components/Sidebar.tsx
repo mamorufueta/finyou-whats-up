@@ -43,9 +43,9 @@ const Sidebar = ({
   onSectionChange
 }: SidebarProps) => {
   return <div className="w-64 border-r border-border h-screen flex flex-col bg-zinc-50">
-      <div className="p-6 border-b border-border">
+      <div className="p-6 border-b border-border bg-slate-50">
         <Logo />
-        <p className="text-xs text-muted-foreground mt-2 font-inter">
+        <p className="text-xs mt-2 font-inter text-zinc-950">
           Seu assistente financeiro inteligente
         </p>
       </div>
