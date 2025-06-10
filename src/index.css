@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,8 +13,8 @@
     --finyou-ice: #F8FFFE;
     --finyou-dark: #1A1A1A;
 
-    --background: 255 255 255; /* Changed to white */
-    --foreground: 26 26 26; /* Finyou Dark */
+    --background: 255 255 255;
+    --foreground: 26 26 26;
 
     --card: 255 255 255;
     --card-foreground: 26 26 26;
@@ -21,7 +22,7 @@
     --popover: 255 255 255;
     --popover-foreground: 26 26 26;
 
-    --primary: 13 79 92; /* Finyou Teal */
+    --primary: 13 79 92;
     --primary-foreground: 248 255 254;
 
     --secondary: 245 245 247;
@@ -30,7 +31,7 @@
     --muted: 245 245 247;
     --muted-foreground: 142 142 147;
 
-    --accent: 0 255 136; /* Finyou Neon */
+    --accent: 0 255 136;
     --accent-foreground: 26 26 26;
 
     --destructive: 239 68 68;

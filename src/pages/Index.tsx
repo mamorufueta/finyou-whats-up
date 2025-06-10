@@ -1,58 +1,48 @@
+
 import React, { useState } from 'react';
 import Sidebar from '@/components/Sidebar';
 import Dashboard from '@/components/Dashboard';
+import Transactions from '@/components/Transactions';
+import Categories from '@/components/Categories';
+import Reports from '@/components/Reports';
+import Trends from '@/components/Trends';
+import Calendar from '@/components/Calendar';
+import Settings from '@/components/Settings';
+
 const Index = () => {
   const [activeSection, setActiveSection] = useState('dashboard');
+
   const renderContent = () => {
     switch (activeSection) {
       case 'dashboard':
         return <Dashboard />;
       case 'transactions':
-        return <div className="p-8">
-            <h1 className="text-3xl font-bold font-sora gradient-text mb-4">Transações</h1>
-            <p className="text-muted-foreground">Gerencie todas as suas transações financeiras.</p>
-          </div>;
+        return <Transactions />;
       case 'categories':
-        return <div className="p-8">
-            <h1 className="text-3xl font-bold font-sora gradient-text mb-4">Categorias</h1>
-            <p className="text-muted-foreground">Organize suas despesas por categoria.</p>
-          </div>;
+        return <Categories />;
       case 'reports':
-        return <div className="p-8">
-            <h1 className="text-3xl font-bold font-sora gradient-text mb-4">Relatórios</h1>
-            <p className="text-muted-foreground">Visualize relatórios detalhados das suas finanças.</p>
-          </div>;
+        return <Reports />;
       case 'trends':
-        return <div className="p-8">
-            <h1 className="text-3xl font-bold font-sora gradient-text mb-4">Tendências</h1>
-            <p className="text-muted-foreground">Analise as tendências dos seus gastos.</p>
-          </div>;
+        return <Trends />;
       case 'calendar':
-        return <div className="p-8">
-            <h1 className="text-3xl font-bold font-sora gradient-text mb-4">Calendário</h1>
-            <p className="text-muted-foreground">Visualize suas transações em calendário.</p>
-          </div>;
-      case 'whatsapp':
-        return <div className="p-8">
-            <h1 className="text-3xl font-bold font-sora gradient-text mb-4">WhatsApp</h1>
-            <p className="text-muted-foreground">Configure a integração com o WhatsApp.</p>
-          </div>;
+        return <Calendar />;
       case 'settings':
-        return <div className="p-8">
-            <h1 className="text-3xl font-bold font-sora gradient-text mb-4">Configurações</h1>
-            <p className="text-muted-foreground">Gerencie as configurações do seu perfil.</p>
-          </div>;
+        return <Settings />;
       default:
         return <Dashboard />;
     }
   };
-  return <div className="min-h-screen flex w-full bg-zinc-50">
+
+  return (
+    <div className="min-h-screen flex w-full bg-white">
       <Sidebar activeSection={activeSection} onSectionChange={setActiveSection} />
-      <div className="flex-1 overflow-auto bg-slate-50">
+      <div className="flex-1 overflow-auto bg-white">
         <main className="p-8">
           {renderContent()}
         </main>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
